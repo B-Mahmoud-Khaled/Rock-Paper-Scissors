@@ -27,6 +27,7 @@ function outcome(playerChoice, computerSelection) {
 function game() {
     for (let i = 0; i < 5; i++) {
         pick = (prompt("Choose : 1. Rock, 2. Paper, 3. Scissors :", 0) - 1)
+        playerChoice = rps[pick]
         console.log(outcome(playerChoice, getComputerChoice()));
     }
     console.log("Score : Player : " + playerScore + " Computer : " + computerScore);
