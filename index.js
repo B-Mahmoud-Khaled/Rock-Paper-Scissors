@@ -11,7 +11,9 @@ function getComputerChoice() {
 }
 
 function outcome(playerChoice, computerSelection) {
-    if (((computerSelection.toUpperCase() == "ROCK") && (playerChoice.toUpperCase() == "SCISSORS")) || ((computerSelection.toUpperCase() == "SCISSORS") && (playerChoice.toUpperCase() == "PAPER")) || ((computerSelection.toUpperCase() == "PAPER") && (playerChoice.toUpperCase() == "ROCK"))) {
+    if (((computerSelection.toUpperCase() == "ROCK") && (playerChoice.toUpperCase() == "SCISSORS")) || 
+        ((computerSelection.toUpperCase() == "SCISSORS") && (playerChoice.toUpperCase() == "PAPER")) || 
+        ((computerSelection.toUpperCase() == "PAPER") && (playerChoice.toUpperCase() == "ROCK"))) {
         computerScore++;
         return "You Lose! " + computerSelection + " beats " + playerChoice + "."
     }
