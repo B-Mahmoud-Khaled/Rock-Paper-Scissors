@@ -14,12 +14,12 @@ const score = document.createElement('div')
 const outcome = document.createElement('div')
 
 
-btn1.classList.toggle("rock");
-btn2.classList.toggle("paper");
-btn3.classList.toggle("scissors");
-div3.classList.toggle("outcome");
-score.classList.toggle("score");
-outcome.classList.toggle("outcome")
+btn1.classList.add("rock", "rpsBtn");
+btn2.classList.add("paper", "rpsBtn");
+btn3.classList.add("scissors", "rpsBtn");
+div3.classList.add("outcome");
+score.classList.add("score");
+outcome.classList.add("outcome")
 
 div1.appendChild(btn1);
 div1.appendChild(btn2);
