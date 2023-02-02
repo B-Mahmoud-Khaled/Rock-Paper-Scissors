@@ -4,6 +4,26 @@ let pick
 let playerScore = 0;
 let computerScore = 0;
 
+
+const btn1 = document.createElement('button');
+const btn2 = document.createElement('button');
+const btn3 = document.createElement('button');
+const div1 = document.querySelector('.rpsContainer');
+
+
+btn1.classList.toggle("rock");
+btn2.classList.toggle("paper");
+btn3.classList.toggle("scissors");
+
+div1.appendChild(btn1);
+div1.appendChild(btn2);
+div1.appendChild(btn3);
+
+btn1.textContent = "Rock";
+btn2.textContent = "Paper";
+btn3.textContent = "Scissors"
+
+
 function getComputerChoice() {
     let rand = (min, max) => { return Math.floor(Math.random() * (max - min)) + min; };
 
