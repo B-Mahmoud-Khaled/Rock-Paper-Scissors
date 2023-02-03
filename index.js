@@ -9,7 +9,9 @@ const computerScores = document.createElement('div');
 const outcome = document.createElement('div');
 const roundCounter = document.createElement('div');
 const resultScreen = document.querySelector('.resultScreen');
-const result = document.createElement('div');
+const result = document.querySelector('.result');
+const closeWin = document.querySelector('.close');
+const replay = document.querySelector('.replay');
 
 const rps = ["Rock", "Paper", "Scissors"];
 let playerChoice;
@@ -19,13 +21,14 @@ let computerScore = 0;
 let round = 1;
 let gameLentgh = prompt("How many rounds do you wish to play? ");
 
+
 btn1.classList.add("rock", "rpsBtn");
 btn2.classList.add("paper", "rpsBtn");
 btn3.classList.add("scissors", "rpsBtn");
 score.classList.add("score");
 outcome.classList.add("outcome");
 roundCounter.classList.add("roundCounter");
-result.classList.add("result")
+
 
 
 display.appendChild(roundCounter);
@@ -40,7 +43,7 @@ display.appendChild(outcome);
 btn1.textContent = "Rock";
 btn2.textContent = "Paper";
 btn3.textContent = "Scissors";
-roundCounter.textContent = `Round ${round} :`
+roundCounter.textContent = `Round ${round} :`;
 
 btn1.addEventListener('click', () => {
     playerChoice = btn1.textContent;
@@ -85,7 +88,7 @@ function getWinner() {
     if (computerScore > playerScore) {
         return "You Lost!";
     }
-    else if (computerScore < playerScore){
+    else if (computerScore < playerScore) {
         return "You Won!";
     }
     else {
@@ -98,11 +101,12 @@ function game() {
     outcome.textContent = getOutcome();
     score.textContent = getScoreCount();
     round++;
-    if(round == gameLentgh){
-        alert(getWinner())
+    if (round == gameLentgh) {
+        resultScreen.style.display = "block";
+        result.textContent = getWinner();
     }
 }
 
-
-
+closeWin.addEventListener('click', () => resultScreen.style.display = "none");
+replay.addEventListener('click', () => resultScreen.style.display = "none");
 
