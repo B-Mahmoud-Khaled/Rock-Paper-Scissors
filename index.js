@@ -1,20 +1,19 @@
 const btn1 = document.createElement('button');
 const btn2 = document.createElement('button');
 const btn3 = document.createElement('button');
-const div1 = document.querySelector('.rpsContainer');
-const div2 = document.querySelector('.display');
-const div3 = document.createElement('div');
+const rpsContainer = document.querySelector('.rpsContainer');
+const display = document.querySelector('.display');
 const score = document.createElement('div');
 const player = document.createElement('div');
 const computerScores = document.createElement('div');
 const outcome = document.createElement('div');
 const roundCounter = document.createElement('div');
 const resultScreen = document.querySelector('.resultScreen');
-const result = document.createElement('div')
+const result = document.createElement('div');
 
-const rps = ["Rock", "Paper", "Scissors"]
-let playerChoice
-let pick
+const rps = ["Rock", "Paper", "Scissors"];
+let playerChoice;
+let pick;
 let playerScore = 0;
 let computerScore = 0;
 let round = 1;
@@ -23,18 +22,19 @@ let gameLentgh = prompt("How many rounds do you wish to play? ");
 btn1.classList.add("rock", "rpsBtn");
 btn2.classList.add("paper", "rpsBtn");
 btn3.classList.add("scissors", "rpsBtn");
-div3.classList.add("outcome");
 score.classList.add("score");
 outcome.classList.add("outcome");
 roundCounter.classList.add("roundCounter");
+result.classList.add("result")
 
 
-div2.appendChild(roundCounter);
-div1.appendChild(btn1);
-div1.appendChild(btn2);
-div1.appendChild(btn3);
-div2.appendChild(score);
-div2.appendChild(outcome);
+display.appendChild(roundCounter);
+rpsContainer.appendChild(btn1);
+rpsContainer.appendChild(btn2);
+rpsContainer.appendChild(btn3);
+display.appendChild(score);
+display.appendChild(outcome);
+
 
 
 btn1.textContent = "Rock";
