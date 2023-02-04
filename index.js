@@ -12,6 +12,9 @@ const resultScreen = document.querySelector('.resultScreen');
 const result = document.querySelector('.result');
 const closeWin = document.querySelector('.close');
 const replay = document.querySelector('.replay');
+const startScreen = document.querySelector('.startScreen');
+const playBtn = document.querySelector('.play');
+
 
 const rps = ["Rock", "Paper", "Scissors"];
 let playerChoice;
@@ -19,8 +22,11 @@ let pick;
 let playerScore = 0;
 let computerScore = 0;
 let round = 1;
-let gameLentgh = prompt("How many rounds do you wish to play? ");
+let gameLentgh = 5
 
+
+
+playBtn.addEventListener('click', () => startScreen.style.display = "none")
 
 btn1.classList.add("rock", "rpsBtn");
 btn2.classList.add("paper", "rpsBtn");
@@ -28,7 +34,6 @@ btn3.classList.add("scissors", "rpsBtn");
 score.classList.add("score");
 outcome.classList.add("outcome");
 roundCounter.classList.add("roundCounter");
-
 
 
 display.appendChild(roundCounter);
@@ -39,11 +44,11 @@ display.appendChild(score);
 display.appendChild(outcome);
 
 
-
 btn1.textContent = "Rock";
 btn2.textContent = "Paper";
 btn3.textContent = "Scissors";
-roundCounter.textContent = `Round ${round} :`;
+
+
 
 btn1.addEventListener('click', () => {
     playerChoice = btn1.textContent;
@@ -68,14 +73,14 @@ function getOutcome() {
     if (((computerSelection == "Rock") && (playerChoice == "Scissors")) ||
         ((computerSelection == "Scissors") && (playerChoice == "Paper")) ||
         ((computerSelection == "Paper") && (playerChoice == "Rock"))) {
-        computerScore++;
+        ++computerScore;
         return "You Lose! " + computerSelection + " beats " + playerChoice + "."
     }
     else if (playerChoice === computerSelection) {
         return "It's a Draw! Both played " + playerChoice + "."
     }
     else {
-        playerScore++;
+        ++playerScore;
         return "You Win! " + playerChoice + " beats " + computerSelection + "."
     }
 }
@@ -100,13 +105,22 @@ function game() {
     computerSelection = getComputerChoice();
     outcome.textContent = getOutcome();
     score.textContent = getScoreCount();
-    round++;
+    roundCounter.textContent = `Round ${round} :`;
+    ++round;
     if (round == gameLentgh) {
         resultScreen.style.display = "block";
         result.textContent = getWinner();
     }
 }
 
-closeWin.addEventListener('click', () => resultScreen.style.display = "none");
-replay.addEventListener('click', () => resultScreen.style.display = "none");
+closeWin.addEventListener('click', () => {
+    resultScreen.style.display = "none";
+    startScreen.style.display = "none";
+});
+replay.addEventListener('click', () => {
+    resultScreen.style.display = "none";
+    computerScore = 0;
+    playerScore = 0;
+    round = 1;
+});
 
