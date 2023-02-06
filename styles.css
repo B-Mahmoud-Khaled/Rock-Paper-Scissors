@@ -1,3 +1,14 @@
+:root{
+  --cardColor : hsl(206, 46%, 37%);
+  --playButtonColor : hsl(203, 30%, 26%);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 .startScreen {
   display: flex;
   align-items: center;
@@ -10,7 +21,8 @@
   justify-content: center;
 }
 
-.startScreen, .resultScreen {
+.startScreen,
+.resultScreen {
   position: fixed;
   z-index: 1;
   left: 0;
@@ -22,17 +34,22 @@
   background-color: rgba(0, 0, 0, 0.4);
 }
 
-.startBox, .resultBox {
+.startBox,
+.resultBox {
   display: flex;
   flex-direction: column;
-  background-color: white;  
-  width: 350px;
-  height: 250px;
-  padding: 0 10px;
+  background-color: var(--cardColor);
+  color: white;
+  min-width: 350px;
+  min-height: 250px;
+  padding: 10px;
+  border-radius: 8px;
 }
 
-.result, .gameIntro{
-  background-color: #fefefe;
+.result,
+.gameIntro {
+  text-align: center;
+  background-color: var(--cardColor);
   margin: 15% auto;
   padding: 20px;
   width: 80%;
@@ -53,3 +70,29 @@
   cursor: pointer;
 }
 
+.gameButton {
+  background-color: #aaa;
+  color: hsl(0, 0%, 96%);
+  border: 2px solid white;
+  border-radius: 6px;
+}
+
+.gameButton:hover,
+.gameButton:focus {
+  background-color: hsl(0, 0%, 60%);
+  color: hsl(0, 0%, 90%);
+}
+
+.rpsBtn {
+  height: 200px;
+  width: 200px;
+  font-size: 50px;
+  background-color: hsl(202, 84%, 81%);
+  border-radius: 8px;
+}
+
+.rpsBtn:hover,
+.rpsBtn:focus{
+  background-color: hsl(206, 83%, 81%);
+
+}

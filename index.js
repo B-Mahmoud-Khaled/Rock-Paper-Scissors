@@ -45,22 +45,21 @@ display.appendChild(score);
 display.appendChild(outcome);
 
 
-btn1.textContent = "Rock";
-btn2.textContent = "Paper";
-btn3.textContent = "Scissors";
-
+btn1.textContent = "✊";
+btn2.textContent = "✋";
+btn3.textContent = "✌️";
 
 
 btn1.addEventListener('click', () => {
-    playerChoice = btn1.textContent;
+    playerChoice = "Rock";
     game();
 });
 btn2.addEventListener('click', () => {
-    playerChoice = btn2.textContent;
+    playerChoice = "Paper";
     game();
 })
 btn3.addEventListener('click', () => {
-    playerChoice = btn3.textContent;
+    playerChoice = "Scissors";
     game();
 })
 
@@ -128,5 +127,6 @@ replay.addEventListener('click', () => {
     computerScore = 0;
     playerScore = 0;
     round = 1;
+    startScreen.style.display = "flex";
 });
 
