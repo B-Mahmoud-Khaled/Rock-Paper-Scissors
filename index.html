@@ -4,11 +4,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="index.js"></script>
-    
+    <title>Rock-Paper-Scissors</title>
+    <script src="index.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    
+    <div class="startScreen">
+        <div class="startBox">
+            <div class="close start">&times;</div>
+            <div class="gameIntro">How many rounds would you like to play?</div>
+            <input class="gameLentgh">
+            <button class="play gameButton">Play</button>
+        </div>
+    </div>
+    <img class="computer" src="images/SmileyFace.png" alt="Smiley face">
+    <div class="display"></div>
+    <div class="rpsContainer"></div>
+    <div class="resultScreen">
+        <div class="resultBox">
+            <div class="close end">&times;</div>
+            <div class="result"></div>
+            <button class="replay gameButton">Play Again?</button>
+        </div>
+    </div>
 </body>
-</html>
+</html> 
