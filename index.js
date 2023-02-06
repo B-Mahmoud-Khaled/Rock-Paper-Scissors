@@ -108,7 +108,8 @@ function game() {
     roundCounter.textContent = `Round ${round} :`;
     ++round;
     if (round == gameLentgh) {
-        resultScreen.style.display = "block";
+        console.log(gameLentgh);
+        resultScreen.style.display = "flex";
         result.textContent = getWinner();
     }
 }

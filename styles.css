@@ -2,25 +2,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgb(0, 0, 0);
-  background-color: rgba(0, 0, 0, 0.4);
-}
-
-.startBox {
-  display: flex;
-  flex-direction: column;
-  background-color: white;  
 }
 
 .resultScreen {
   display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.startScreen, .resultScreen {
   position: fixed;
   z-index: 1;
   left: 0;
@@ -32,12 +22,10 @@
   background-color: rgba(0, 0, 0, 0.4);
 }
 
-.resultBox {
+.startBox, .resultBox {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  background-color: white;
-  position: relative;
+  background-color: white;  
 }
 
 .result, .gameIntro{
@@ -50,12 +38,11 @@
 
 .close {
   display: flex;
-  justify-content: flex-end;
+  align-items: end;
   color: #aaa;
   float: right;
   font-size: 28px;
   font-weight: bold;
-
 }
 
 .close:hover,
