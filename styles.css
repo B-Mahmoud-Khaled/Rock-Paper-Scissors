@@ -1,12 +1,19 @@
 :root{
-  --cardColor : hsl(206, 46%, 37%);
-  --playButtonColor : hsl(203, 30%, 26%);
+  --cardColor : hsl(177, 44%, 45%);
+  --playButtonColor : hsl(187, 44%, 45%);
+  --playButtonHover : hsl(197, 44%, 45%);
+  --rpsButtonColor : hsl(181, 56%, 60%);
+  --rpsButtonHover : hsl(191, 56%, 60%);
+  --bodyColor : hsl(177, 41%, 57%);
 }
 
 body {
   margin: 0;
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bodyColor );
+  color: white;
+  text-align: center;
 }
 
 .startScreen {
@@ -38,10 +45,11 @@ body {
 .resultBox {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   background-color: var(--cardColor);
   color: white;
-  min-width: 350px;
-  min-height: 250px;
+  font-size: 20px;
   padding: 10px;
   border-radius: 8px;
 }
@@ -53,14 +61,16 @@ body {
   margin: 15% auto;
   padding: 20px;
   width: 80%;
+  min-width: 400px;
 }
 
 .close {
-  text-align: end;
+  align-self: end;
   color: #aaa;
   float: right;
   font-size: 28px;
   font-weight: bold;
+
 }
 
 .close:hover,
@@ -71,15 +81,18 @@ body {
 }
 
 .gameButton {
-  background-color: #aaa;
-  color: hsl(0, 0%, 96%);
+  background-color: var(--playButtonColor);
+  color: white;
   border: 2px solid white;
+  min-width: 150px;
   border-radius: 6px;
+  font-size: 20px;
+  padding: 3px 10px;
 }
 
 .gameButton:hover,
 .gameButton:focus {
-  background-color: hsl(0, 0%, 60%);
+  background-color: var(--playButtonHover);
   color: hsl(0, 0%, 90%);
 }
 
@@ -87,12 +100,42 @@ body {
   height: 200px;
   width: 200px;
   font-size: 50px;
-  background-color: hsl(202, 84%, 81%);
+  background-color: var(--rpsButtonColor);
   border-radius: 8px;
+  border: 2px solid white ;
 }
 
 .rpsBtn:hover,
 .rpsBtn:focus{
-  background-color: hsl(206, 83%, 81%);
+  background-color: var(--rpsButtonHover);
 
 }
+
+.gameLentgh {
+  border-radius: 8px;
+  border: 2px solid white;
+  max-width: 50px;
+  background-color: var(--cardColor);
+  color: white;
+  font-size: 18px;
+  margin: 10px;
+  text-align: center;
+}
+
+@keyframes color-rotate {
+  from {
+    filter: hue-rotate(0deg);
+  }
+  to {
+    filter: hue-rotate(360deg);
+  }
+}
+
+.computer {
+  animation: color-rotate 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  width: 200px;
+  height: auto;
+}
+
