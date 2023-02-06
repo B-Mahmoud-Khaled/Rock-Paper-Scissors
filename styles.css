@@ -26,19 +26,20 @@
   display: flex;
   flex-direction: column;
   background-color: white;  
+  width: 350px;
+  height: 250px;
+  padding: 0 10px;
 }
 
 .result, .gameIntro{
   background-color: #fefefe;
   margin: 15% auto;
   padding: 20px;
-  border: 1px solid #888;
   width: 80%;
 }
 
 .close {
-  display: flex;
-  align-items: end;
+  text-align: end;
   color: #aaa;
   float: right;
   font-size: 28px;
@@ -51,3 +52,4 @@
   text-decoration: none;
   cursor: pointer;
 }
+

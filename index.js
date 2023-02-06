@@ -10,19 +10,20 @@ const outcome = document.createElement('div');
 const roundCounter = document.createElement('div');
 const resultScreen = document.querySelector('.resultScreen');
 const result = document.querySelector('.result');
-const closeWin = document.querySelector('.close');
+const closeStart = document.querySelector('.close.start');
+const closeEnd = document.querySelector('.close.end');
 const replay = document.querySelector('.replay');
 const startScreen = document.querySelector('.startScreen');
 const playBtn = document.querySelector('.play');
-
+const gameLentgh = document.querySelector('.gameLentgh')
 
 const rps = ["Rock", "Paper", "Scissors"];
 let playerChoice;
 let pick;
 let playerScore = 0;
 let computerScore = 0;
-let round = 1;
-let gameLentgh = 5
+let round =1;
+
 
 
 
@@ -106,18 +107,22 @@ function game() {
     outcome.textContent = getOutcome();
     score.textContent = getScoreCount();
     roundCounter.textContent = `Round ${round} :`;
-    ++round;
-    if (round == gameLentgh) {
+    if (round == Number(gameLentgh.value)) {
         console.log(gameLentgh);
         resultScreen.style.display = "flex";
         result.textContent = getWinner();
     }
+    ++round;
 }
 
-closeWin.addEventListener('click', () => {
-    resultScreen.style.display = "none";
+closeStart.addEventListener('click', () => {
     startScreen.style.display = "none";
 });
+
+closeEnd.addEventListener('click', () => {
+    resultScreen.style.display = "none";
+});
+
 replay.addEventListener('click', () => {
     resultScreen.style.display = "none";
     computerScore = 0;
